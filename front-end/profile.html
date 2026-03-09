@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - SÓ BODY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .profile-section {
+            padding: 120px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+
+        .profile-container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 600px;
+        }
+
+        /* Sidebar similar to admin but cleaner */
+        .profile-sidebar {
+            background: #fcfcfc;
+            border-right: 1px solid #eee;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-greeting {
+            padding: 0 30px;
+            margin-bottom: 40px;
+        }
+
+        .user-greeting h3 {
+            font-size: 24px;
+            color: var(--secondary-gold);
+            margin-bottom: 5px;
+        }
+
+        .user-greeting p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 30px;
+            color: #666;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
+
+        .menu-link:hover,
+        .menu-link.active {
+            background: #fff;
+            color: var(--primary-gold);
+            border-left-color: var(--primary-gold);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .logout-link {
+            margin-top: auto;
+            color: #dc3545;
+        }
+
+        .logout-link:hover {
+            background: #fff5f5;
+            color: #dc3545;
+            border-left-color: #dc3545;
+        }
+
+        /* Content Area */
+        .profile-content {
+            padding: 40px;
+            background: #fff;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .section-header-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        /* Personal Data Styling */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .data-card {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .data-label {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .data-value {
+            font-size: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Order History Styling */
+        .orders-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .order-card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .order-card:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-color: var(--light-gold);
+        }
+
+        .order-header {
+            background: #fcfcfc;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-id {
+            font-weight: 700;
+            color: var(--secondary-gold);
+        }
+
+        .order-date {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .order-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-paid {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-processed {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .order-body {
+            padding: 20px 25px;
+        }
+
+        .order-items-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order-item-thumb {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .order-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #eee;
+        }
+
+        .order-total {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding: 20px 0;
+            }
+
+            .menu-link {
+                padding: 10px 20px;
+            }
+
+            .profile-content {
+                padding: 20px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (Copiada do index) -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="brand-logo">
+                <a href="index.html">
+                    <img src="images/whitesobody-removebg-preview.png" alt="Logo SÓ BODY">
+                </a>
+            </span>
+        </div>
+
+        <div class="navbar-menu">
+            <a href="index.html" class="navbar-item">INÍCIO</a>
+            <a href="catalog.html" class="navbar-item">PRODUTOS</a>
+            <a href="index.html#sobre" class="navbar-item">SOBRE</a>
+            <a href="index.html#contato" class="navbar-item">CONTATO</a>
+            <a href="delivery.html" class="navbar-item">RASTREIO</a>
+        </div>
+
+        <div class="navbar-icons">
+            <!-- Logout Icon Added specifically for this page -->
+            <a href="#" class="navbar-icon" id="navbar-logout" title="Sair">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+            <a href="cart.html" class="navbar-icon cart-icon-wrapper" aria-label="Carrinho">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+
+        <button class="navbar-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Main Profile Area -->
+    <div class="profile-section">
+        <div class="profile-container">
+            <!-- Sidebar -->
+            <div class="profile-sidebar">
+                <div class="user-greeting">
+                    <h3 id="user-name-display">Olá, Usuário</h3>
+                    <p>Minha Conta</p>
+                </div>
+
+                <nav class="profile-menu">
+                    <div class="menu-link active" onclick="switchTab('profile')">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Dados Pessoais</span>
+                    </div>
+                    <div class="menu-link" onclick="switchTab('orders')">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Meus Pedidos</span>
+                    </div>
+                    <!-- Link to Admin if user is admin -->
+                    <a href="admin.html" class="menu-link" id="admin-link-sidebar" style="display: none;">
+                        <i class="fas fa-cog"></i>
+                        <span>Painel Admin</span>
+                    </a>
+                    <div class="menu-link logout-link" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Content -->
+            <div class="profile-content">
+                <!-- Personal Data Section -->
+                <div id="tab-profile" class="content-section active">
+                    <h2 class="section-header-text">Dados Pessoais</h2>
+                    <div class="data-grid">
+                        <div class="data-card">
+                            <div class="data-label">Nome Completo</div>
+                            <div class="data-value" id="profile-name">Carregando...</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-label">Email</div>
+                            <div class="data-value" id="profile-email">Carregando...</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-label">Tipo de Conta</div>
+                            <div class="data-value" id="profile-role">Cliente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orders Section -->
+                <div id="tab-orders" class="content-section">
+                    <h2 class="section-header-text">Meus Pedidos</h2>
+                    <div id="orders-container" class="orders-list">
+                        <p style="color: #666; font-size: 18px;">Carregando pedidos...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="images/whitesobody-removebg-preview.png" alt="SÓ BODY" class="footer-logo-img">
+                    <p class="footer-tagline">Onde a moda encontra a atitude</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-wrapper">
+                    <div class="footer-section">
+                        <h4>Navegação</h4>
+                        <ul>
+                            <li><a href="catalog.html">Catálogo</a></li>
+                            <li><a href="index.html#sobre">Sobre</a></li>
+                            <li><a href="index.html#contato">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SÓ BODY - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-menu-overlay"></div>
+    <script src="api.js"></script>
+    <script src="global.js"></script>
+    <script src="profile.js"></script>
+</body>
+
+</html>

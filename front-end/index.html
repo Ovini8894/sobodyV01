@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SÓ BODY - Onde a Moda Encontra a Atitude</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Darker+Grotesque:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <span class="brand-logo">
+        <a href="index.html">
+          <img src="images/whitesobody-removebg-preview.png" alt="Logo SÓ BODY">
+        </a>
+      </span>
+    </div>
+
+    <div class="navbar-menu">
+      <a href="index.html" class="navbar-item">INÍCIO</a>
+      <a href="catalog.html" class="navbar-item">PRODUTOS</a>
+      <a href="#sobre" class="navbar-item">SOBRE</a>
+      <a href="#contato" class="navbar-item">CONTATO</a>
+      <a href="delivery.html" class="navbar-item">RASTREIO</a>
+    </div>
+
+    <div class="navbar-icons">
+      <a href="#" class="navbar-icon search-toggle" aria-label="Buscar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </a>
+      <a href="login.html" class="navbar-icon" aria-label="Minha conta">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+      <a href="cart.html" class="navbar-icon cart-icon-wrapper" aria-label="Carrinho">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+
+    <button class="navbar-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <!-- Título principal -->
+      <div class="title">
+        <img src="images/goldensobody-removebg-preview.png" alt="Logo principal do site">
+      </div>
+
+      <!-- Subtítulo -->
+      <p class="subtitle">ONDE A MODA ENCONTRA A ATITUDE</p>
+
+      <!-- Carrossel de produtos modernizado sem indicadores -->
+      <div class="products-carousel">
+        <div class="carousel-track">
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/sacolanoBG.png" alt="Sacola">
+              <div class="card-label">Bolsas</div>
+            </div>
+          </div>
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/bodynoBG.png" alt="Body">
+              <div class="card-label">Bodies</div>
+            </div>
+          </div>
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/pursenoBG.png" alt="Bolsa">
+              <div class="card-label">Acessórios</div>
+            </div>
+          </div>
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/cabidenoBG.png" alt="Cabide">
+              <div class="card-label">Coleções</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botão de compra -->
+      <a href="catalog.html" class="cta-button">
+        <div class="cart-icon"></div>
+        <span class="cta-text">COMPRE AGORA</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="about-section">
+    <div class="about-container">
+      <div class="about-image-wrapper">
+        <div class="about-image-decoration"></div>
+        <img src="images/aboutImage.jpg" alt="Sobre a loja SÓ BODY" class="about-image">
+        <div class="about-badge">
+          <i class="fas fa-crown"></i>
+          <span>Estilo & Atitude</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="about-header">
+          <span class="about-subtitle">CONHEÇA-NOS</span>
+          <h2 class="about-title">Sobre a SÓ BODY</h2>
+          <div class="about-divider"></div>
+        </div>
+
+        <div class="about-text">
+          <p class="about-paragraph highlight">Nossa loja nasceu da vontade de oferecer peças que valorizam o estilo e a
+            confiança de cada mulher.</p>
+
+          <p class="about-paragraph">Trabalhamos com <strong>bodies e bolsas</strong> como destaque, mas nosso catálogo
+            vai muito além tendo também blusinhas, vestidos e outros acessórios que completam qualquer look com
+            personalidade.</p>
+
+          <p class="about-paragraph">Acreditamos que se vestir bem não é questão de tendência, e sim de
+            <strong>atitude</strong>. Por isso, cada peça é escolhida com cuidado, unindo o conforto e a qualidade que
+            toda mulher deseja no seu guarda-roupa.
+          </p>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Qualidade Premium</h4>
+              <p>Peças selecionadas com cuidado</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Estilo Único</h4>
+              <p>Para mulheres autênticas</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Atendimento Especial</h4>
+              <p>Sempre prontas para você</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="about-cta">
+          <a href="catalog.html"
+            style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px; width: 100%;">
+            <span>CONHEÇA NOSSA COLEÇÃO</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Contato -->
+  <section id="contato" class="contact">
+    <div class="contact-container">
+      <div class="section-header">
+        <h2 class="section-title">Entre em Contato</h2>
+        <p class="section-subtitle">Escolha a melhor forma de falar conosco</p>
+      </div>
+
+      <!-- Botões de contato direto (Instagram, WhatsApp, Telefone) -->
+      <div class="contact-buttons">
+        <a href="https://www.instagram.com/bora.de.body/" target="_blank" class="contact-btn contact-btn-instagram">
+          <div class="btn-icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="btn-content">
+            <span class="btn-label">Instagram</span>
+            <span class="btn-text">@bora.de.body</span>
+          </div>
+        </a>
+
+        <a href="https://wa.me/5534996848050" target="_blank" class="contact-btn contact-btn-whatsapp">
+          <div class="btn-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="btn-content">
+            <span class="btn-label">WhatsApp</span>
+            <span class="btn-text">Fale conosco</span>
+          </div>
+        </a>
+
+        <a href="tel:+5534996848050" class="contact-btn contact-btn-phone">
+          <div class="btn-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="btn-content">
+            <span class="btn-label">Telefone</span>
+            <span class="btn-text">(34) 99684-8050</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Formulário de contato para problemas/suporte via email -->
+      <div class="form-section">
+        <div class="form-header">
+          <h3>Teve algum problema?</h3>
+          <p>Envie sua mensagem e responderemos por email o mais breve possível</p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required placeholder=" ">
+              <label for="name">Seu nome</label>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder=" ">
+              <label for="email">Seu email</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" required placeholder=" ">
+            <label for="subject">Assunto</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+            <label for="message">Descreva seu problema ou dúvida</label>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>Enviar Mensagem</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de busca expansível -->
+  <div class="search-bar">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Buscar produtos...">
+      <button class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="search-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Adicionando overlay para menu mobile -->
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Footer Redesigned -->
+  <!-- Footer Redesigned -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/whitesobody-removebg-preview.png" alt="SÓ BODY" class="footer-logo-img">
+          <p class="footer-tagline">Onde a moda encontra a atitude. Estilo único para mulheres autênticas.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-wrapper">
+          <div class="footer-section">
+            <h4>Comprar</h4>
+            <ul>
+              <li><a href="catalog.html?category=bodies">Bodies</a></li>
+              <li><a href="catalog.html?category=bolsas">Bolsas</a></li>
+              <li><a href="catalog.html?category=vestidos">Vestidos</a></li>
+              <li><a href="catalog.html?category=acessorios">Acessórios</a></li>
+              <li><a href="catalog.html">Todos os Produtos</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Institucional</h4>
+            <ul>
+              <li><a href="index.html#sobre">Sobre Nós</a></li>
+              <li><a href="index.html#contato">Contato</a></li>
+              <li><a href="delivery.html">Rastrear Pedido</a></li>
+              <li><a href="#">Trocas e Devoluções</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SÓ BODY - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="api.js"></script>
+  <script src="global.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const track = document.querySelector('.carousel-track');
+      const slides = document.querySelectorAll('.product-slide');
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        if (window.innerWidth <= 768) {
+          // Mobile: mostra um slide por vez
+          const slideWidth = 100;
+          track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        } else {
+          // Desktop: mostra todos os slides com scroll suave
+          const slideWidth = slides[0].offsetWidth + 70; // largura + gap
+          track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+      }
+
+      function nextSlide() {
+        const maxIndex = window.innerWidth <= 768 ? slides.length - 1 : slides.length - 4;
+        currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
+        updateCarousel();
+      }
+
+      // Auto-play no mobile
+      if (window.innerWidth <= 768) {
+        setInterval(nextSlide, 3000);
+      }
+
+      // Atualiza no resize
+      window.addEventListener('resize', updateCarousel);
+      updateCarousel();
+
+      // Inicializar contador do carrinho
+      updateCartBadge();
+
+      // Lógica do formulário de contato
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const submitBtn = contactForm.querySelector('.submit-btn');
+          const originalBtnContent = submitBtn.innerHTML;
+
+          try {
+            submitBtn.innerHTML = '<span>Enviando...</span><i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            const formData = {
+              name: document.getElementById('name').value,
+              email: document.getElementById('email').value,
+              subject: document.getElementById('subject').value,
+              message: document.getElementById('message').value
+            };
+
+            await API.contact.send(formData);
+
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            contactForm.reset();
+          } catch (error) {
+            console.error('Erro ao enviar mensagem:', error);
+            alert('Erro ao enviar mensagem. Por favor, tente novamente.');
+          } finally {
+            submitBtn.innerHTML = originalBtnContent;
+            submitBtn.disabled = false;
+          }
+        });
+      }
+    });
+
+    function updateCartBadge() {
+      const cartBadge = document.querySelector('.cart-badge');
+      // Lógica para atualizar o contador do carrinho
+      cartBadge.textContent = '0'; // Exemplo de atualização
+    }
+  </script>
+</body>
+
+</html>
