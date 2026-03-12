@@ -439,7 +439,7 @@ body:not(.login-page):not(.admin-page):not(.order-success) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(images/carrinhoNOBG.png);
+  background-image: url(assets/carrinhoNOBG.png);
   background-size: 40px;
   background-position: center;
   background-repeat: no-repeat;
